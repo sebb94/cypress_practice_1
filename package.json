@@ -25,5 +25,8 @@
   "dependencies": {
     "cypress": "^5.0.0",
     "prettier": "^2.1.1"
+  },
+  "devDependencies": {
+    "cypress-dark": "^1.7.14"
   }
 }
