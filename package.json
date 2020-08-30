@@ -1,0 +1,28 @@
+{
+  "name": "cypress_practice_1",
+  "version": "1.0.0",
+  "description": "cypress practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebb94/cypress_practice_1.git"
+  },
+  "keywords": [
+    "testing",
+    "cypress",
+    "automation"
+  ],
+  "author": "Sebastian Gagor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebb94/cypress_practice_1/issues"
+  },
+  "homepage": "https://github.com/sebb94/cypress_practice_1#readme",
+  "dependencies": {
+    "cypress": "^5.0.0",
+    "prettier": "^2.1.1"
+  }
+}
