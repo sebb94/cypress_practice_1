@@ -11,6 +11,14 @@ describe('Browser action', () => {
         cy.get('h1').should('be.visible');
     });
 
+    it('should wait for 3 second', () => {
+        cy.wait(3000);
+    });
+
+    it('should pasue the execution', () => {
+        cy.pause()        
+    });
+
     it('should check for correct h6 element on the page', () => {
         cy.get('h6').should('be.visible');
     });
