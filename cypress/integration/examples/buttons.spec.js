@@ -17,4 +17,19 @@ describe('Browser actions', () => {
         cy.get('.product_pod').its('length').should('eq', 11); 
 
     });
+
+    it('Click on poetry category', () => {
+            cy.get('a')
+            .contains('Poetry')
+            .click();
+    });
+
+    it('Click Olio book', () => {
+            cy.get('a[title="Olio"').click()
+    });
+
+    it('Check price of book', () => {
+            let price = '£23.88';
+            cy.get('.price_color').contains(price);
+    });
 });
