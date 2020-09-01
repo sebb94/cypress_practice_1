@@ -20,6 +20,16 @@ describe('Working with inputs', () => {
         })
     });
 
+    it('should mark checkbox', () => {
+        cy.get('input#user_remember_me').check()
+        cy.wait(2000)
+    });
+
+    it('should uncheck checkbox', () => {
+        cy.get('input#user_remember_me').uncheck()
+        cy.wait(2000)
+    });
+
     it('should submit login form', () => {
         cy.contains('Sign in').click()
     });
