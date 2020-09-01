@@ -2,19 +2,22 @@ describe('Browser actions', () => {
     it('should load books website', () => {
         cy.visit('http://books.toscrape.com/index.html', { timeout: 6000 })
         cy.url().should('include', 'index.html')
+        cy.log('Before Reload')
+        cy.reload()
+        cy.log('After Reload')
     });
 
     it('should click on travel category', () => {
 
         cy.get('a')
         .contains('Travel')
-        .click();
+        .click()
         
-        cy.get('h1').contains('Travel');
+        cy.get('h1').contains('Travel')
     });
 
     it('should display correct number of books', () => {
-        cy.get('.product_pod').its('length').should('eq', 11); 
+        cy.get('.product_pod').its('length').should('eq', 11)
 
     });
 
@@ -30,6 +33,6 @@ describe('Browser actions', () => {
 
     it('Check price of book', () => {
             let price = '£23.88';
-            cy.get('.price_color').contains(price);
+            cy.get('.price_color').contains(price)
     });
 });
