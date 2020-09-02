@@ -1,6 +1,8 @@
 describe('Working with inputs', () => {
     it('should load login page', () => {
         cy.visit('zero.webappsecurity.com/login.html')
+        cy.clearCookies({ log: true })
+        cy.clearLocalStorage('your item', { log: true})
     });
 
     it('should fill username', () => {
@@ -14,7 +16,8 @@ describe('Working with inputs', () => {
 
     it('should fill password', () => {
         const password = cy.get('#user_password')
-        password.clear()
+        cy.get('#user_password').as('password')
+        cy.get('@password').clear()
         password.type('Some invalid password', { 
             delay: 50 
         })
@@ -35,6 +38,6 @@ describe('Working with inputs', () => {
     });
 
     it('should display error message', () => {
-        cy.get('.alert-error').should('be.visible')
+        cy.get('.alert-error').should('be.visible').and('include.text', 'Login and/or password are wrong.')
     });
 });
