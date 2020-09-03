@@ -1,8 +1,16 @@
 describe('Working with inputs', () => {
+
+    it('should override current time', () => {
+        const date = new Date(2020, 3, 10).getTime()
+        cy.clock(date);
+        cy.log(date); 
+    });
+
     it('should load login page', () => {
         cy.visit('zero.webappsecurity.com/login.html')
         cy.clearCookies({ log: true })
         cy.clearLocalStorage('your item', { log: true})
+        cy.title().should('include', 'a Zero - Log in')
     });
 
     it('should fill username', () => {
