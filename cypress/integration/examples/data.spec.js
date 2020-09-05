@@ -15,4 +15,12 @@ describe('Write / Read data to Json / Text file', () => {
     it('should read and verify txt file', () => {
         cy.readFile('log.txt').should('eq','Hello World')
     });
+
+    it('should read and verify browser document content', () => {
+        cy.visit('http://example.com')
+        cy.wait(2000)
+        cy.document().its('contentType').should('eq','text/html')
+        cy.document().should('have.property', 'charset').and('eq','UTF-8')
+    });
+
 });
