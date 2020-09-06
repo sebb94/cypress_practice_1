@@ -1,4 +1,4 @@
-describe('Seachbox test', () => {
+describe('Feedback test', () => {
     before(() => {
         cy.visit("http://zero.webappsecurity.com/")
         cy.contains('Feedback').click()
@@ -15,7 +15,7 @@ describe('Seachbox test', () => {
     });
 
     it('should fill email', () => {
-            cy.get('input#email').type('seba@gmail.com')
+        cy.get('input#email').type('seba@gmail.com')
     });
 
     it('should fill subject', () => {
