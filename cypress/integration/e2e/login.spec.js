@@ -11,9 +11,7 @@ describe('Login test', () => {
             const username = user.invalid_username
             const password = user.invalid_password
 
-            cy.get('#user_login').type(username)
-            cy.get("#user_password").type(password)
-            cy.contains('Sign in').click()
+           cy.login(username,password)
         })
     });
 
@@ -26,9 +24,8 @@ describe('Login test', () => {
             const username = user.valid_username
             const password = user.valid_password
 
-            cy.get('#user_login').type(username)
-            cy.get("#user_password").type(password)
-            cy.contains('Sign in').click()
+             cy.login(username, password)
+            
         })
     });
 
